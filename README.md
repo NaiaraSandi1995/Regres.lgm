@@ -1,8 +1,8 @@
 # AIC e BIC: Critérios de Informação
-## Uma visão prática para estatísticos e cientistas sociais
+## "Análise dos critérios de regressão logística para a turma de doutorado em CP da UFPA"
 
 **Autora**: Profa. Naiara Sandi de Almeida Alcantara  
-**Data**: `r Sys.Date()`  
+**Data**: 13/12  
 
 ---
 
@@ -71,13 +71,6 @@ Onde:
 - Use **BIC** quando o foco é identificar o modelo mais provável de ser o "correto", especialmente com grandes conjuntos de dados.
 
 ---
-
-## Como visualizar no GitHub
-
-1. Salve este arquivo como `README.md` no seu repositório.
-2. Inclua os seguintes arquivos no repositório:
-   - O código `.Rmd` para replicação.
-   - O arquivo `.html` gerado (opcional, se deseja hospedar visualizações no GitHub Pages).
 
 3. Ative o **GitHub Pages** nas configurações do repositório para exibir o relatório em formato web.
 
