@@ -70,8 +70,3 @@ Onde:
 - Use **AIC** quando o foco é previsão e você está disposto a considerar modelos ligeiramente mais complexos.
 - Use **BIC** quando o foco é identificar o modelo mais provável de ser o "correto", especialmente com grandes conjuntos de dados.
 
----
-
-3. Ative o **GitHub Pages** nas configurações do repositório para exibir o relatório em formato web.
-
-Se precisar de algo mais ou ajustes no estilo, estou aqui! 😊
