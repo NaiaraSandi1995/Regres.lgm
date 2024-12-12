@@ -104,7 +104,8 @@ ggplot(dados, aes(logito, Estresse))+
 #Análise do modelo
 
 library(sjPlot)
-tab_model(Modelo)
+tab_model(Modelo, show.ci = F, 
+          p.style = "stars")
 
 #habito de fumar 
 #Transformação em porcentage
@@ -127,14 +128,62 @@ Modelo2 <-  glm(Cancer ~ Hab_Fumar,
                family = binomial(link = 'logit'),
                data = dados)
 
-tab_model(Modelo2)
+tab_model(Modelo2,
+          show.ci = F, 
+          p.style = "stars")
 
+###
+#Apresentação dos resultados
+
+library(coefplot)
+coefplot(Modelo)
+
+coefplot1 <- plot_model(Modelo, 
+                        show.intercept = F, 
+                        show.p = T, 
+                        show.values = T, 
+                        value.size = 4,
+                        digits = 2, 
+                        vline.color = "pink", 
+                        sort.est = T, 
+                        width = 0.05) 
+
+coefplot1
+
+coefplot(Modelo2)
+
+coefplot2 <- plot_model(Modelo2, 
+                        show.intercept = F, 
+                        show.p = T, 
+                        show.values = T, 
+                        value.size = 4,
+                        digits = 2, 
+                        vline.color = "pink", 
+                        sort.est = T, 
+                        width = 0.05) 
+
+coefplot2+
+theme_classic() +
+  scale_color_sjplot("system")
 
 #Pseudo R2 - não temos r2 para a regressão logística
 
 PseudoR2(Modelo, which = "Nagelkerke")
 
 PseudoR2(Modelo2, which = "Nagelkerke")
+
+#Comparação entre os modelos 
+#AIC e BIC 
+#Quanto menor o valor menor.
+AIC(Modelo, Modelo2)
+BIC(Modelo, Modelo2)
+#quando não tem uma diferença de nem 
+#10 pontos consideramos que os modelos
+#são iguais, mas escolhemos que tem 
+#mais variáveis significativas
+
+
+
 
 #Comparação entre os modelos 
 #AIC e BIC 
